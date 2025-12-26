@@ -1,0 +1,154 @@
+
+:root{
+    --primary-color:#ff6600;
+    --secondary-solor:#000000e4;
+    --text-color:#ffffffcc;
+    --footer-text:#ccc;
+    --hover-color:#ff8533;
+    --white:#fff;
+    --navbar-bg:#222222;
+}
+/* Cart */
+#shopping{
+    margin-top: 90px;
+}
+/* Navbar */
+.navbar{
+    background-color: var(--navbar-bg) !important;
+    padding: 15px 20px;
+    box-shadow: 5px 5px 10px rgb(0,0,0,0.6);
+    z-index: 1000;
+}
+
+.navbar-brand{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--primary-color) !important;
+}
+
+.nav-link{
+    color: var(--text-color) !important;
+    transition:color 0.3s ease-in-out 0s;
+}
+.nav-link:hover{
+    color: var(--hover-color) !important;
+}
+ .navbar-toggler {
+    border: none;
+  }
+  
+  .navbar-toggler-icon {
+    filter: invert(1); /* Makes toggler icon visible */
+  }
+ #login{
+    top:2px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    font-size: smaller;
+    border-radius: 10px;
+    transform: scale(0.9);
+    transition: all infinite ease-in-out;
+ }
+ #login:hover{
+    transform: scale(1);
+ }
+
+/* Carousel */
+#heroCarousel{
+    margin-top: 50px;
+}
+#heroCarousel .carousel-caption{
+    background-color: rgba(0,0, 0,0.4);
+    border-radius: 10px;
+}
+#heroCarousel .carousel-caption h2{
+    font-weight: 500;
+    font-size: 32px;
+}
+#heroCarousel .carousel-caption .btn{
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    border:none;
+    color:var(--white);
+    transition: all 0.3s ease-in-out;
+}
+#heroCarousel .carousel-caption .btn:hover{
+    background-color: var(--hover-color);
+}
+/* Section */
+.section-title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    margin:5px 0 20px 0;
+    color: var(--primary-color);
+}
+.card{
+    border:none;
+    background-color: var(--secondary-solor);
+    color:var(--text-color);
+    box-shadow: 0px 2px 2px rgba(0,0, 0,0.2);
+    overflow: hidden;
+    transition:all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.card:hover{
+    transform: scale(1.01);
+    box-shadow: 3px 8px 10px rgba(0,0, 0,0.3);
+}
+.card-img-top{
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    height: 200px;
+}
+.btn-primary{
+    border: none;
+    background-color: var(--hover-color);
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
+}
+.btn-primary:hover{
+    background-color: var(--primary-color);
+    opacity: 1;
+    transform:translateY(2px);
+}
+/* foot Style */
+.footer{
+    background-color: var(--secondary-solor);
+    padding: 50px 0;
+    margin-top: 20px;
+    color: var(--footer-text);
+    font-size: 14px;
+    text-align: center;
+}
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer h5{
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+.footer-list li{
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+.footer-list a {
+    color: var(--footer-text);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+.footer-list a:hover {
+    color: #ff9900af
+}
+.copyright{
+    position: relative;
+    top:25px;
+    color:var(--footer-text);
+}
+hr{
+    position: relative;
+    top:20px;
+}

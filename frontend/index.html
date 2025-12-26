@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Shopify</title>
+    
+    <!-- bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    >
+    <!-- Styling -->
+    <link rel="stylesheet" href="Styling/style.css">
+    <!-- fontawesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- navbar -->
+   <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand fw-bolder" href="index.html"><img src="images/logog.png" alt="brand" height="30px" width="35px"> SHOPIFY</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#clo">Clothing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#ele">Accessaries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span class="cart-badge">0</span></a>
+        </li>
+        <li class="nav-item" id="authSection">
+          <a class="nav-link" href="login.html" style="position:relative;left:80%" id="login-button">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- hero Banner Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <!-- banner 1 -->
+    <div class="carousel-item active">
+      <img src="images/img1.png" class="d-block w-100" alt="Fashion">
+      <div class="carousel-caption">
+        <h2>PUMA Flat 30% Offer</h2>
+        <p>Upgrade your wardrobe with the latest collection</p>
+        <a href="#" class="btn btn-primary">Shop Now</a>
+      </div>
+    </div>
+    <!-- banner 2 -->
+    <div class="carousel-item">
+      <img src="images/img2.png" class="d-block w-100" alt="Shoes">
+      <div class="carousel-caption">
+      <h2>Exclusive Footwear Collection</h2>
+      <p>Get the best deals on top brands</p>
+      <a href="#" class="btn btn-primary">Shop Now</a>
+    </div>
+    </div>
+    <!-- banner 3 -->
+    <div class="carousel-item">
+      <img src="images/img3.png" class="d-block w-100" alt="Watches">
+      <div class="carousel-caption">
+            <h2>Luxury Watches Collection</h2>
+            <p>Stylish and premium designs for all occasions</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+      </div>
+    </div>
+  </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+</div>
+
+  <div class="container mt-5" id="product-section">
+    <h2 class="section-title" id="gad">🔥Gadgests</h2>
+    <div class="row" id="gadgest-products"></div>
+
+    <h2 class="section-title" id="clo">👗Clothing Collection</h2>
+    <div class="row" id="clothing-products"></div>
+
+    <h2 class="section-title" id="ele">💻Electronics</h2>
+    <div class="row" id="electronic-products"></div>
+  </div>
+
+
+<!-- footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-md-6">
+          <h5>ABOUT</h5>
+          <ul class="footer-list">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="col-xl-3 col-md-6">
+           <h5>ADDRESS</h5>
+          <ul class="footer-list">
+            <li><a href="#">Patel Nagar,Prabhatam Heights</a></li>
+            <li><a href="#">Raisen Road,BHOPAL</a></li>
+            <li><a href="#">+91 8943673732</a></li>
+            <li><a href="#">9:00am - 9:00pm, Mon-Sat</a></li>
+          </ul>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <h5>BRAND PARTNERS</h5>
+          <ul class="footer-list">
+              <li><a href="#">Zara</a></li>
+            <li><a href="#">Zudio</a></li>
+            <li><a href="#">Levi's</a></li>
+            <li><a href="#">APH</a></li>
+            </ul>
+        </div>
+        <div class="col-xl-3 col-md-6">
+          <h5>HELPFUL LINKS</h5>
+          <ul class="footer-list">
+              <li><a href="#">Help</a></li>
+            <li><a href="#">Issue</a></li>
+            <li><a href="#">eyshopy69@gmail.com</a></li>
+            <li><a href="#">suppor6969t@gmail.com</a></li>
+            </ul>
+        </div>
+      </div>
+      <hr>
+      <p class="copyright">© 2025 Shopify | Designed by <strong>Ayush..</strong></p>
+    </div>
+  </footer>
+
+
+  <script src="js/script.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/navbar-auth.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
