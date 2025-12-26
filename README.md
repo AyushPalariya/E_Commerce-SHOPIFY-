@@ -21,7 +21,10 @@ Build Tool: Maven
 📱 Responsive and user-friendly UI
 
 Some images:
-        ![Uploading image.png…]()
+<img width="1919" height="1048" alt="Screenshot 2025-12-26 204830" src="https://github.com/user-attachments/assets/7cd480f9-e81a-4375-95fe-52b4e977d1a6" />
+<img width="1909" height="1031" alt="Screenshot 2025-12-26 204844" src="https://github.com/user-attachments/assets/3c3a1489-e571-4cb2-8a97-e60d82a3efff" />
+[cart](https://github.com/user-attachments/assets/3c3a1489-e571-4cb2-8a97-e60d82a3efff)
+
 
 
 Future Enhancements
