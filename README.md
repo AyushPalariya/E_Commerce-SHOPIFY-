@@ -26,7 +26,7 @@
 ## 🌟 Overview
 
 **Shopify** is a full-stack e-commerce web application that allows users to browse products (Gadgets, Clothing, Electronics), add items to a cart, place orders, and pay securely online via Razorpay. Upon successful payment, an order confirmation email is dispatched automatically.
-
+git
 ---
 
 ## 📸 Screenshots
