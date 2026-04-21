@@ -10,11 +10,13 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-
+    @Autowired
+    private EmailService emailService;
     @Autowired
     private UserRepo userRepo;
     public User registerUser(User user){
         User user1 = userRepo.save(user);
+        emailService.registerEmail(user1);
         System.out.println("user added into database");
         return user1;
     }

@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
           <i class="fa-solid fa-user"></i> ${user.name || "User"}
         </a>
         <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
           <li><a class="dropdown-item" href="myProfile.html">My Profile</a></li>
+          <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
           <li><hr class="dropdown-divider"></li>
           <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">Logout</a></li>
         </ul>

@@ -21,8 +21,10 @@ public class UserController {
     public User login(@RequestBody User user){
         return userService.login(user.getEmail(),user.getPassword());
     }
+    //security//admin
     @GetMapping("/getAll-users")
     public List<User> getAllUsers(){
         return userService.getAll();
     }
+
 }

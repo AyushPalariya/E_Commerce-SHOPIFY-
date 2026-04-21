@@ -16,20 +16,31 @@ public class User {
     private String name;
     private String password;
     private String email;
-    @JsonIgnore
+    private String phone;
+    @JsonIgnore//not save in db also not get in postman
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "user")
     private List<Orders> ordersList;
 
-    public User(Long id, String name, String password, String email, List<Orders> ordersList) {
+    public User(Long id, String name,String phone, String password, String email, List<Orders> ordersList) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.phone=phone;
         this.email = email;
         this.ordersList = ordersList;
     }
     public User(){
 
     }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public Long getId() {
         return id;
     }
