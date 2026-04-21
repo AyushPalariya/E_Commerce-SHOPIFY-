@@ -34,19 +34,24 @@ git
 ### 🏠 Homepage — Hero Banner & Gadgets Section
 <img width="1865" height="1029" alt="image" src="https://github.com/user-attachments/assets/c8d01329-f443-457b-b059-c4463b2d113d" />
 
+<img width="1866" height="1015" alt="Screenshot 2026-04-21 141127" src="https://github.com/user-attachments/assets/78cb8f03-aa12-4480-9f23-3c848ecbe820" />
 
 
-### 👗 Product Listings — Clothing Collection
-![Clothing Collection](./screenshots/02-clothing-collection.png)
+
+<img width="1872" height="1001" alt="image" src="https://github.com/user-attachments/assets/750e45fd-1064-4b3e-9bd9-ef4e62f627d4" />
+
 
 ### 💻 Product Listings — Electronics & Footer
-![Electronics and Footer](./screenshots/03-electronics-footer.png)
+<img width="1900" height="434" alt="image" src="https://github.com/user-attachments/assets/5f8b1609-d8c7-4cc3-b8fe-f966b47c8e16" />
+
 
 ### 🛒 Shopping Cart
-![Shopping Cart](./screenshots/04-cart.png)
+<img width="1855" height="533" alt="image" src="https://github.com/user-attachments/assets/ef989a17-6514-4934-aada-b01c7377ad95" />
+
 
 ### 🔐 Login Page
-![Login Page](./screenshots/05-login.png)
+<img width="1122" height="908" alt="image" src="https://github.com/user-attachments/assets/33fb0465-7a5e-4234-b2e1-2a9b7b8ceae3" />
+
 
 ---
 
