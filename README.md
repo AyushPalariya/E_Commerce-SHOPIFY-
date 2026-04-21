@@ -29,6 +29,25 @@
 
 ---
 
+## 📸 Screenshots
+
+### 🏠 Homepage — Hero Banner & Gadgets Section
+![Homepage Hero Banner](./screenshots/01-homepage-hero.png)
+
+### 👗 Product Listings — Clothing Collection
+![Clothing Collection](./screenshots/02-clothing-collection.png)
+
+### 💻 Product Listings — Electronics & Footer
+![Electronics and Footer](./screenshots/03-electronics-footer.png)
+
+### 🛒 Shopping Cart
+![Shopping Cart](./screenshots/04-cart.png)
+
+### 🔐 Login Page
+![Login Page](./screenshots/05-login.png)
+
+---
+
 ## ✨ Features
 
 - 🏠 **Homepage** with hero banner carousel and categorized product listings (Gadgets, Clothing, Electronics)
