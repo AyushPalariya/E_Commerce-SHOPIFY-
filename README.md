@@ -32,7 +32,9 @@ git
 ## 📸 Screenshots
 
 ### 🏠 Homepage — Hero Banner & Gadgets Section
-![Homepage Hero Banner](./screenshots/01-homepage-hero.png)
+<img width="1865" height="1029" alt="image" src="https://github.com/user-attachments/assets/c8d01329-f443-457b-b059-c4463b2d113d" />
+
+
 
 ### 👗 Product Listings — Clothing Collection
 ![Clothing Collection](./screenshots/02-clothing-collection.png)
