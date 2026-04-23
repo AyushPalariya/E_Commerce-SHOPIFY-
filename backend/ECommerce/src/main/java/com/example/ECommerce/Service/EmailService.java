@@ -47,7 +47,11 @@ public class EmailService {
                         "ECommerce Store"
         );
 
-        javaMailSender.send(message);
+        try {
+            javaMailSender.send(message);
+        } catch (Exception e) {
+            System.err.println("Error sending order confirmation email: " + e.getMessage());
+        }
     }
 
 
@@ -66,8 +70,10 @@ public class EmailService {
                 + "You can now log in and start using our services.\n\n"
                 + "ThankYou...\n";
 
-        message.setText(body);
-        javaMailSender.send(message);
-
+        try {
+            javaMailSender.send(message);
+        } catch (Exception e) {
+            System.err.println("Error sending registration email: " + e.getMessage());
+        }
     }
 }

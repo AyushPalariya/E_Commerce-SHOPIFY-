@@ -1,0 +1,53 @@
+services:
+  # ---- MySQL Database ----
+  - type: pvt
+    name: db
+    env: docker
+    dockerfile: Dockerfile.db
+    plan: free
+    envVars:
+      - key: MYSQL_ROOT_PASSWORD
+        value: Ayush@2003
+      - key: MYSQL_DATABASE
+        value: ecommerce1
+
+  # ---- Spring Boot Backend ----
+  - type: web
+    name: backend
+    env: docker
+    dockerContext: ./backend/ECommerce
+    dockerfile: Dockerfile
+    plan: free
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://db:3306/ecommerce1
+      - key: MYSQL_HOST
+        value: db
+      - key: MYSQL_PORT
+        value: 3306
+      - key: MYSQL_DATABASE
+        value: ecommerce1
+      - key: MYSQL_USER
+        value: root
+      - key: MYSQL_PASSWORD
+        value: Ayush@2003
+      - key: RAZORPAY_KEY_ID
+        value: rzp_test_Sg1c47mJQEXgXj
+      - key: RAZORPAY_KEY_SECRET
+        value: jb1LtAAXCT9ohbHR0btN6E9L
+      - key: MAIL_USER
+        value: ayushpalariya96@gmail.com
+      - key: MAIL_PASS
+        value: "utmm tbjc jhhj gqzc"
+
+  # ---- Nginx Frontend ----
+  - type: web
+    name: frontend
+    env: docker
+    dockerContext: ./frontend
+    dockerfile: Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 80

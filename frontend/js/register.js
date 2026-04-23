@@ -1,5 +1,5 @@
-// Backend base URL
-const BASE_URL = "http://localhost:8080/users";
+// Backend URL
+const USERS_URL = `${BASE_URL}/users`;
 
 // Handle Register
 document.getElementById("registerForm")?.addEventListener("submit", async (e) => {
@@ -13,19 +13,19 @@ document.getElementById("registerForm")?.addEventListener("submit", async (e) =>
   };
 
   try {
-    const res = await fetch(`${BASE_URL}/register`, {
+    const res = await fetch(`${USERS_URL}/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData)
     });
 
- if (res.ok) {
-  const data = await res.json(); // backend should return user object
-  localStorage.setItem("user", JSON.stringify({ email: data.email, name: data.name, phone:data.phone, id:data.id }));
-  alert("Registration successful!");
-  window.location.href = "index.html";
+    if (res.ok) {
+      const data = await res.json(); // backend should return user object
+      localStorage.setItem("user", JSON.stringify({ email: data.email, name: data.name, phone: data.phone, id: data.id }));
+      alert("Registration successful!");
+      window.location.href = "index.html";
     }
- else {
+    else {
       alert("Registration failed!");
     }
   } catch (err) {
@@ -44,20 +44,20 @@ document.getElementById("loginForm")?.addEventListener("submit", async (e) => {
   };
 
   try {
-    const res = await fetch(`${BASE_URL}/login`, {
+    const res = await fetch(`${USERS_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(loginData)
     });
 
-if (res.ok) {
-  const data = await res.json(); // backend should return user object
-  localStorage.setItem("user", JSON.stringify({ email: data.email, name: data.name, id:data.id, phone: data.phone}));
-  alert("Login successful!");
-  window.location.href = "index.html"; // redirect to home
-} else {
-  alert("Invalid credentials!");
-}
+    if (res.ok) {
+      const data = await res.json(); // backend should return user object
+      localStorage.setItem("user", JSON.stringify({ email: data.email, name: data.name, id: data.id, phone: data.phone }));
+      alert("Login successful!");
+      window.location.href = "index.html"; // redirect to home
+    } else {
+      alert("Invalid credentials!");
+    }
 
   } catch (err) {
     console.error(err);

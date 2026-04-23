@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/products/${productId}`);
+        const productUrl = `${BASE_URL}/products/${productId}`;
+        const response = await fetch(productUrl);
         if (!response.ok) {
             throw new Error(`Server returned ${response.status}`);
         }
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.getElementById("detailTitle").innerText = product.name;
         document.getElementById("detailPrice").innerText = `₹${product.price}`;
         document.getElementById("detailDesc").innerText = product.description;
-        
+
         let cat = product.category || "General";
         document.getElementById("detailCategory").innerText = cat;
         document.getElementById("breadCategory").innerText = cat;
@@ -31,14 +32,14 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Hook up buttons
         document.getElementById("detailAddToCart").addEventListener("click", () => {
             // Reusing addToCart logic from cart.js
-            if(typeof addToCart === 'function'){
+            if (typeof addToCart === 'function') {
                 addToCart(product.id, product.name, product.price, product.imgUrl);
                 alert(`${product.name} added to cart!`);
             }
         });
 
         document.getElementById("detailBuyNow").addEventListener("click", () => {
-            if(typeof addToCart === 'function'){
+            if (typeof addToCart === 'function') {
                 addToCart(product.id, product.name, product.price, product.imgUrl);
                 window.location.href = "cart.html";
             }

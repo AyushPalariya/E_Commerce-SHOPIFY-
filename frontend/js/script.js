@@ -1,18 +1,18 @@
-const BASE_URL="http://localhost:8080";
+// BASE_URL is loaded from js/config.js
 
 async function loadProducts() {
-    try{
-        const res=await fetch(`${BASE_URL}/products`);
-        const products=await res.json();
-        
-        const gadgestlist=document.getElementById("gadgest-products");
-        const clothinglist=document.getElementById("clothing-products");
-        const electroniclist=document.getElementById("electronic-products");
-        gadgestlist.innerHTML="";
-        clothinglist.innerHTML="";
-        electroniclist.innerHTML="";
-        products.forEach((product)=>{
-            let productCard=`
+    try {
+        const res = await fetch(`${BASE_URL}/products`);
+        const products = await res.json();
+
+        const gadgestlist = document.getElementById("gadgest-products");
+        const clothinglist = document.getElementById("clothing-products");
+        const electroniclist = document.getElementById("electronic-products");
+        gadgestlist.innerHTML = "";
+        clothinglist.innerHTML = "";
+        electroniclist.innerHTML = "";
+        products.forEach((product) => {
+            let productCard = `
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100 product-card shadow-sm border border-secondary" style="background-color: var(--secondary-solor);">
                         <a href="productView.html?id=${product.id}" class="text-decoration-none text-light d-block p-0 text-center" style="color: inherit; cursor: pointer;">
@@ -31,21 +31,21 @@ async function loadProducts() {
                     </div>
                 </div>
             `;
-            if(product.category === "Clothing"){
-                clothinglist.innerHTML+=productCard;
+            if (product.category === "Clothing") {
+                clothinglist.innerHTML += productCard;
             }
-            else if(product.category === "Electronics"){
-                electroniclist.innerHTML+=productCard;
+            else if (product.category === "Electronics") {
+                electroniclist.innerHTML += productCard;
             }
-            else{
-                gadgestlist.innerHTML+=productCard;
+            else {
+                gadgestlist.innerHTML += productCard;
             }
         });
 
-        
+
     }
-    catch(err){
-        console.log("Error fetching Products",err);
+    catch (err) {
+        console.log("Error fetching Products", err);
     }
 
 }
@@ -59,7 +59,7 @@ function filterProducts(query) {
     const cards = document.querySelectorAll("#gadgest-products .col-lg-3, #clothing-products .col-lg-3, #electronic-products .col-lg-3");
     cards.forEach(card => {
         const title = card.querySelector(".card-title")?.innerText.toLowerCase() || "";
-        const desc  = card.querySelector(".card-text")?.innerText.toLowerCase() || "";
+        const desc = card.querySelector(".card-text")?.innerText.toLowerCase() || "";
         if (q === "" || title.includes(q) || desc.includes(q)) {
             card.style.display = "";
         } else {

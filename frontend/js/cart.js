@@ -1,12 +1,12 @@
 
-const PAYMENT_BASE_URL = "http://localhost:8080/payment";
+const PAYMENT_BASE_URL = `${BASE_URL}/payment`;
 let cart = JSON.parse(localStorage.getItem("cart")) ?? [];
 //getting from loacal storage
 function loadCart() {
     let cart = JSON.parse(localStorage.getItem("cart")) ?? [];
     const cartItems = document.getElementById("cart-items");
     if (!cartItems) return; // Prevent crash on non-cart pages
-    
+
     let totalAmount = 0;
     cartItems.innerHTML = "";
 
@@ -166,7 +166,8 @@ async function checkout() {
                         cart.forEach(item => {
                             productQuantities[item.id] = item.quantity;
                         });
-                        await fetch(`http://localhost:8080/order/place/${user.id}`, {
+                        const orderPlaceUrl = `${BASE_URL}/order/place/${user.id}`;
+                        await fetch(orderPlaceUrl, {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({

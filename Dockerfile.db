@@ -1,0 +1,11 @@
+FROM mysql:8
+
+# Environment variables for initialization
+ENV MYSQL_DATABASE=ecommerce1
+ENV MYSQL_ROOT_PASSWORD=Ayush@2003
+
+# Copy the data dump into the special entrypoint folder
+# MySQL will automatically run this file on first start
+COPY ecommerce1.sql /docker-entrypoint-initdb.d/init.sql
+
+EXPOSE 3306

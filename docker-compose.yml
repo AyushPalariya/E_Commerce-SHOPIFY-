@@ -1,0 +1,80 @@
+version: '3.8'
+
+services:
+
+  # ---- MySQL Database ----
+  db:
+    image: mysql:8
+    container_name: ecommerce-db
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: Ayush@2003
+      MYSQL_DATABASE: ecommerce1
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./ecommerce1.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - ecommerce-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-pAyush@2003"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  # ---- Spring Boot Backend ----
+  backend:
+    build:
+      context: ./backend/ECommerce
+      dockerfile: Dockerfile
+    container_name: ecommerce-backend
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ecommerce1
+      MYSQL_HOST: db
+      MYSQL_PORT: 3306
+      MYSQL_DATABASE: ecommerce1
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Ayush@2003
+      RAZORPAY_KEY_ID: rzp_test_Sg1c47mJQEXgXj
+      RAZORPAY_KEY_SECRET: jb1LtAAXCT9ohbHR0btN6E9L
+      MAIL_USER: ayushpalariya96@gmail.com
+      MAIL_PASS: "utmm tbjc jhhj gqzc"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - ecommerce-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ---- Frontend Static Server ----
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ecommerce-frontend
+    restart: on-failure
+    ports:
+      - "5501:80"
+    depends_on:
+      - backend
+    networks:
+      - ecommerce-network
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+
+networks:
+  ecommerce-network:
+    driver: bridge
+
+volumes:
+  mysql_data:

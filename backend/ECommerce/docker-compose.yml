@@ -1,0 +1,50 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: ecommerce1
+      MYSQL_ROOT_PASSWORD: Ayush@2003
+    ports:
+      - "3307:3306"
+    volumes:
+      - /mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+
+  springboot:
+    build: .
+    container_name: springboot-container
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/ecommerce1
+      MYSQL_HOST: host.docker.internal
+      MYSQL_DATABASE: ecommerce1
+      MYSQL_PASSWORD: Ayush@2003
+      MYSQL_USER: root
+      MYSQL_PORT: 3306
+      RAZORPAY_KEY_ID: rzp_test_Sg1c47mJQEXgXj
+      RAZORPAY_KEY_SECRET: jb1LtAAXCT9ohbHR0btN6E9L
+      MAIL_USER: ayushpalariya96@gmail.com
+      MAIL_PASS: "utmm tbjc jhhj gqzc"
+      SERVER_PORT: 8080
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - app-network
+
+volumes:
+  mysql-data:
+networks:
+  app-network:

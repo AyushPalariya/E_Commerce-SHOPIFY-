@@ -1,20 +1,21 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    
+
     if (!user) {
         window.location.href = "login.html";
         return;
     }
 
     const ordersContainer = document.getElementById("ordersContainer");
-    
+
     try {
         if (!user.id) {
             ordersContainer.innerHTML = `<h5 class="text-danger">USER ID IS MISSING IN LOCALSTORAGE! Please logout and login again.</h5>`;
             return;
         }
 
-        const response = await fetch(`http://localhost:8080/order/user-Order/${user.id}`);
+        const orderUrl = `${BASE_URL}/order/user-Order/${user.id}`;
+        const response = await fetch(orderUrl);
         if (!response.ok) {
             let errText = await response.text();
             ordersContainer.innerHTML = `<h5 class="text-danger">Failed to fetch order history.<br>Target: /order/user-Order/${user.id}<br>Status: ${response.status}<br>Reply: ${errText}</h5>`;
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         let orders;
         try {
             orders = JSON.parse(ordersText);
-        } catch(e) {
+        } catch (e) {
             ordersContainer.innerHTML = `<h5 class="text-danger">JSON Parse Error. Backend sent: <br> ${ordersText}</h5>`;
             return;
         }
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 </div>
             </div>`;
         });
-        
+
         ordersContainer.innerHTML = html;
 
     } catch (err) {
