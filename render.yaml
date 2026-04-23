@@ -3,7 +3,8 @@ services:
   - type: web
     name: db
     env: docker
-    dockerfile: Dockerfile.db
+    dockerContext: .
+    dockerfilePath: Dockerfile.db
     plan: free
     envVars:
       - key: MYSQL_ROOT_PASSWORD
@@ -16,7 +17,7 @@ services:
     name: backend
     env: docker
     dockerContext: ./backend/ECommerce
-    dockerfile: Dockerfile
+    dockerfilePath: Dockerfile
     plan: free
     healthCheckPath: /actuator/health
     envVars:
@@ -46,7 +47,7 @@ services:
     name: frontend
     env: docker
     dockerContext: ./frontend
-    dockerfile: Dockerfile
+    dockerfilePath: Dockerfile
     plan: free
     envVars:
       - key: PORT
