@@ -1,6 +1,6 @@
 services:
   # ---- MySQL Database ----
-  - type: pvt
+  - type: web
     name: db
     env: docker
     dockerfile: Dockerfile.db
